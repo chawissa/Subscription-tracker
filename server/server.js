@@ -27,11 +27,13 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get('/', subscriptionController.getAllSubs);
+
 app.post('/', subscriptionController.createSub);
-(req, res) => {
-  console.log('new subscriptions added successfully');
-  res.status(200).json(res.locals.subs);
-};
+// (req, res) => {
+//   console.log('new subscriptions added successfully');
+//   res.status(200).json(res.locals.subs);
+// };
 
 // Unknonwn route handler
 app.use((req, res) => res.sendStatus(404));
