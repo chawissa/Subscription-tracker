@@ -31,6 +31,9 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: ['*', '.js', '.jsx'],
+  },
   devServer: {
     static: {
       publicPath: 'dist',

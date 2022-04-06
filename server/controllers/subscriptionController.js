@@ -5,8 +5,9 @@ const subscriptionController = {
   getAllSubs(req, res, next) {
     Subscription.find({})
       .then((result) => {
-        console.log(result);
-        res.locals.subs = result;
+        console.log('All the subscriptions: ', result);
+        res.json(result);
+        // res.locals.subs = result;
         return next();
       })
       .catch((err) => next({ err }));
@@ -25,7 +26,8 @@ const subscriptionController = {
     Subscription.create({ name, price, comment })
       .then((result) => {
         console.log('result is: ', result);
-        res.locals.subs = result;
+        // res.json(result);
+        res.locals.sub = result;
         return next();
       })
       .catch((err) => next({ err }));
@@ -46,6 +48,7 @@ const subscriptionController = {
     Subscription.findOneAndUpdate({ name }, req.body)
       .then((result) => {
         console.log('updatedResult: ', result);
+        res.locals.update = result;
         return next();
       })
       .catch((err) => next({ err }));
