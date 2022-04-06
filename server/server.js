@@ -27,13 +27,21 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+// GET ALL SUBSCRIPTIONS ROUTE HANDLER
 app.get('/', subscriptionController.getAllSubs);
 
+// CREATE NEW SUBSCRIPTION ROUTE HANDLER
 app.post('/', subscriptionController.createSub);
 // (req, res) => {
 //   console.log('new subscriptions added successfully');
 //   res.status(200).json(res.locals.subs);
 // };
+
+// UPDATE SUBSCRIPTION ROUTE HANDLER
+app.patch('/:name', subscriptionController.updateSub);
+
+// DELETE SUBSCRIPTION ROUTE HANDLER
+app.delete('/:name', subscriptionController.deleteSub);
 
 // Unknonwn route handler
 app.use((req, res) => res.sendStatus(404));

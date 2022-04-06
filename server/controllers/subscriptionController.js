@@ -30,6 +30,37 @@ const subscriptionController = {
       })
       .catch((err) => next({ err }));
   },
+
+  updateSub(req, res, next) {
+    const { name } = req.params;
+    // const { name, price, comment } = req.body;
+    // if (!id)
+    //   return next({
+    //     log: 'subscriptionController.updateSub ERROR: propery on request params undefined',
+    //     message: {
+    //       error:
+    //         'subscriptionController.updateSub ERROR: Incorrect data received',
+    //     },
+    //   });
+
+    Subscription.findOneAndUpdate({ name }, req.body)
+      .then((result) => {
+        console.log('updatedResult: ', result);
+        return next();
+      })
+      .catch((err) => next({ err }));
+  },
+
+  deleteSub(req, res, next) {
+    const { name } = req.params;
+
+    Subscription.deleteOne({ name })
+      .then((result) => {
+        console.log('deletedResult: ', result);
+        return next();
+      })
+      .catch((err) => next({ err }));
+  },
 };
 
 module.exports = subscriptionController;
