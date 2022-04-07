@@ -24,7 +24,7 @@ connection.once('open', function () {
 });
 
 app.use(cors());
-// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 // ROUTE HANDLER TO RESPOND WITH THE MAIN APP

@@ -23,7 +23,7 @@ const subscriptionController = {
       });
     }
 
-    Subscription.create({ name, price, comment })
+    Subscription.create(req.body)
       .then((result) => {
         console.log('result is: ', result);
         // res.json(result);
@@ -34,7 +34,7 @@ const subscriptionController = {
   },
 
   updateSub(req, res, next) {
-    const { name } = req.params;
+    const { id } = req.params;
     // const { name, price, comment } = req.body;
     // if (!id)
     //   return next({
@@ -45,7 +45,7 @@ const subscriptionController = {
     //     },
     //   });
 
-    Subscription.findOneAndUpdate({ name }, req.body)
+    Subscription.findByIdAndUpdate(id, req.body)
       .then((result) => {
         console.log('updatedResult: ', result);
         res.locals.update = result;
@@ -55,9 +55,9 @@ const subscriptionController = {
   },
 
   deleteSub(req, res, next) {
-    const { name } = req.params;
+    const { id } = req.params;
 
-    Subscription.deleteOne({ name })
+    Subscription.findByIdAndRemove(id, req.body)
       .then((result) => {
         console.log('deletedResult: ', result);
         return next();
