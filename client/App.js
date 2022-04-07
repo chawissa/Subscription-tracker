@@ -3,8 +3,9 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import CreateSub from './components/CreateSub';
-import EditSub from './components/EditSub';
+import UpdateSub from './components/UpdateSub';
 import SubsList from './components/SubsList';
+import DisplaySub from './components/DisplaySub';
 import Nav from './components/Nav';
 
 const App = () => {
@@ -14,8 +15,8 @@ const App = () => {
         <Nav />
         {/* <br /> */}
         <Routes>
-          <Route path="/" exact element={<SubsList />} />
-          <Route path="/edit/:id" element={<EditSub />} />
+          <Route path="/" exact element={<DisplaySub />} />
+          {/* <Route path="/edit/:id" element={<EditSub />} /> */}
           <Route path="/create" element={<CreateSub />} />
         </Routes>
       </div>
