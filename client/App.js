@@ -15,7 +15,7 @@ const App = () => {
         {/* <br /> */}
         <Routes>
           <Route path="/" exact element={<SubsList />} />
-          <Route path="/edit/:name" element={<EditSub />} />
+          <Route path="/edit/:id" element={<EditSub />} />
           <Route path="/create" element={<CreateSub />} />
         </Routes>
       </div>
