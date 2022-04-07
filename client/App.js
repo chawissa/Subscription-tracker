@@ -15,6 +15,7 @@ const App = () => {
       <>
         {/* <Nav /> */}
         <div className="container">
+          <h1 className="header">Subscription Tracker</h1>
           {/* <br /> */}
           <Routes>
             <Route path="/" exact element={<DisplaySub />} />
