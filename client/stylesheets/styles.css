@@ -34,20 +34,6 @@ sub-btn {
   color: black;
   padding-top: 4rem;
 }
-/* .container {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  grid-template-rows: 14rem 1.6fr;
-  grid-gap: 0 px 0 px;
-  gap: 0 px 0 px;
-  grid-template-areas:
-    'todo-btn-back . todo-btn-new'
-    'todo-data todo-data todo-data';
-  align-content: stretch;
-  justify-content: space-evenly;
-  align-items: center;
-  justify-items: end;
-} */
 
 a {
   text-decoration: none;
@@ -123,8 +109,6 @@ button:active {
   background: rgba(134, 97, 209, 0.25);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(2.5px);
-  -webkit-backdrop-filter: blur(2.5px);
-  /* border-radius: 55px; */
   border: 1px solid rgba(255, 255, 255, 0.18);
   display: flex;
   flex-direction: column;
@@ -178,8 +162,7 @@ button:active {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #8661d15e; */
-  /* background-color: #8661d15e; */
+  backdrop-filter: blur(8px);
 }
 .update-container .update-sub-data {
   display: grid;

@@ -7,7 +7,7 @@ const SubsList = ({ subInfos, handleEdit, handleDelete }) => {
       <div className="subscription">
         <h2>{name}</h2>
         <h1></h1>
-        <p>{price}</p>
+        <p>${price}</p>
         <p>{comment}</p>
       </div>
       <h1></h1>
