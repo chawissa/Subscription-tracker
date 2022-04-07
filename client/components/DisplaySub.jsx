@@ -2,6 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+
+// import '../stylesheets/styles.css';
+
 import SubsList from './SubsList';
 import UpdateSub from './UpdateSub';
 
@@ -45,7 +48,7 @@ const DisplaySub = () => {
   };
 
   return (
-    <section className="sub-container">
+    <section className="sub-container container">
       <Link to="/create" className="sub-btn-new">
         <button className="sub-btn">Add new subscription</button>
       </Link>

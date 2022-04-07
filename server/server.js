@@ -12,8 +12,6 @@ const apiRouter = require('./routes/api');
 //   : 'mongodb://localhost/solo_project_prod';
 // mongoose.connect(mongoURI);
 
-// const subscriptionController = require('./controllers/subscriptionController');
-
 const mongoURI = 'mongodb://localhost/soloProj';
 mongoose.connect(mongoURI);
 
@@ -35,25 +33,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', apiRouter);
-
-// GET ALL SUBSCRIPTIONS ROUTE HANDLER
-// app.get('/', subscriptionController.getAllSubs);
-
-// CREATE NEW SUBSCRIPTION ROUTE HANDLER
-// app.post('/', subscriptionController.createSub),
-//   (req, res) => {
-//     console.log('new subscription added successfully');
-//     res.status(200).json(res.locals.sub);
-//   };
-
-// UPDATE SUBSCRIPTION ROUTE HANDLER
-// app.patch('/:name', subscriptionController.updateSub, (req, res) => {
-//   console.log('Updated successfully');
-//   res.status(200).json(res.locals.update);
-// });
-
-// DELETE SUBSCRIPTION ROUTE HANDLER
-// app.delete('/:name', subscriptionController.deleteSub);
 
 // Unknonwn route handler
 app.use((req, res) => res.sendStatus(404));
